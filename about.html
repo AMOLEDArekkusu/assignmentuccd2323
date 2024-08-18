@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Discover Malaysia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+    :root {
+      --color-1: #0f1016;
+      --text-color: #f0f0f0;
+      --accent-color: #006aff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      background-color: #f5f5f5;
+    }
+
+    nav {
+  background-color: var(--color-1);
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-branding {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links > li {
+  list-style: none;
+}
+
+.navbar-links > li > a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 20px 15px;
+  display: block;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-links > li > a:hover {
+  background-color: var(--accent-color);
+}
+
+.dropdown {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 1;
+}
+
+.dropdown li {
+  list-style: none;
+}
+
+.dropdown li a {
+  color: #333;
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown li a:hover {
+  background-color: #f0f0f0;
+}
+
+.navbar-links > li:hover .dropdown {
+  display: block;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--text-color);
+}
+
+.content {
+  max-width: 800px;
+  margin: 100px auto 40px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s forwards;
+  }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      color: var(--accent-color);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideIn 0.5s forwards;
+      text-align: justify;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .section:nth-child(2) { animation-delay: 0.2s; }
+    .section:nth-child(3) { animation-delay: 0.4s; }
+
+    .section h2 {
+      color: var(--accent-color);
+      margin-bottom: 10px;
+    }
+
+    .footer {
+  background-color: #0f1016;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  margin-bottom: 20px;
+  flex: 1 1 300px;
+}
+
+.footer h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+  color: var(--accent-color);
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  font-size: 20px;
+  color: var(--accent-color);
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: var(--accent-color);
+}
+
+.social-icons i {
+  color: #1c1c24;
+  font-size: 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .navbar-links {
+        position: fixed;
+        left: -100%;
+        top: 60px;
+        flex-direction: column;
+        background-color: var(--color-1);
+         width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        height: calc(100vh - 60px);
+        overflow-y: auto;
+      }
+
+      .navbar-links.active {
+        left: 0;
+      }
+
+      .navbar-links > li {
+        margin: 15px 0;
+      }
+
+      .dropdown {
+        position: static;
+        display: none;
+        background-color: #1a1a1a;
+        width: 100%;
+      }
+
+      .navbar-links > li:hover .dropdown {
+        display: none;
+      }
+
+      .navbar-links > li > a:focus + .dropdown,
+      .dropdown:hover {
+        display: block;
+      }
+
+      .content {
+        margin-top: 80px;
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .section h2 {
+        font-size: 20px;
+      }
+    
+
+   
+      .content {
+        margin-top: 70px;
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .section h2 {
+        font-size: 18px;
+      }
+
+      .footer-section {
+       flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+      <a href="home.html" class="nav-branding"><i class="fas fa-home"></i> HOME</a>
+      <ul class="navbar-links">
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="faq_n_helps.html">FAQ</a></li>
+        <li>
+          <a href="#" class="pages-link">PAGES <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="Kedah.html">Kedah</a></li>
+            <li><a href="pahang.html">Pahang</a></li>
+            <li><a href="Penang.html">Penang</a></li>
+            <li><a href="Perak.html">Perak</a></li>
+            <li><a href="negeri.sembilan.html">Negeri Sembilan</a></li>
+            <li><a href="Kuala Lumpur.html">Kuala Lumpur</a></li>
+            <li><a href="Sabah.html">Sabah</a></li>
+            <li><a href="Sarawak.html">Sarawak</a></li>
+          </ul>
+        </li>
+        <li><a href="contact_us.html">CONTACT US</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+    <h1>About Discover Malaysia</h1>
+    
+    <div class="section">
+      <h2>Our Mission</h2>
+      <p>At Discover Malaysia, our mission is to showcase the beauty, diversity, and rich cultural heritage of Malaysia to the world. We strive to provide authentic experiences and in-depth knowledge about the various states and attractions across the country.</p>
+    </div>
+    
+    <div class="section">
+      <h2>Who We Are</h2>
+      <p>We are a passionate team of travel enthusiasts, local experts, and cultural ambassadors. Our diverse backgrounds and extensive knowledge of Malaysia allow us to offer unique insights and personalized recommendations to our visitors.</p>
+    </div>
+    
+    <div class="section">
+      <h2>What We Offer</h2>
+      <p>Through our platform, we provide comprehensive guides to Malaysia's states, from the bustling streets of Kuala Lumpur to the lush rainforests of Sabah and Sarawak. Whether you're interested in historical landmarks, natural wonders, or culinary adventures, we're here to help you discover the best of Malaysia.</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h2>Company</h2>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+          <li><a href="privacy policy.html">Privacy Policy</a></li>
+          <li><a href="tnc.html">Terms & Condition</a></li>
+          <li><a href="faq_n_helps.html">FAQs & Help</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h2>Contact</h2>
+        <div class="contact-info">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>23 Jalan Merdeka, Kuala Lumpur, Malaysia</p>
+        </div>
+        <div class="contact-info">
+          <i class="fas fa-phone"></i>
+          <p>+012 3456 7890</p>
+        </div>
+        <div class="contact-info">
+          <i class="fas fa-envelope"></i>
+          <p>info@discovermalaysia.com</p>
+        </div>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="https://github.com/AMOLEDArekkusu"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy;2024 Discover Malaysia. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".navbar-links");
+    const dropdowns = document.querySelectorAll(".navbar-links > li > a");
+    const pagesLink = document.querySelector(".pages-link");
+  
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("active");
+    });
+  
+    dropdowns.forEach(dropdown => {
+      dropdown.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          const submenu = dropdown.nextElementSibling;
+          if (submenu && submenu.classList.contains("dropdown")) {
+            e.preventDefault();
+            submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+          }
+        }
+      });
+    });
+  
+    pagesLink.addEventListener("click", (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        const dropdownMenu = pagesLink.nextElementSibling;
+        dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+      }
+    });
+  
+    document.addEventListener("click", (e) => {
+      if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        navLinks.classList.remove("active");
+        hamburger.classList.remove("active");
+        
+        // Close all dropdowns when clicking outside
+        const allDropdowns = document.querySelectorAll(".dropdown");
+        allDropdowns.forEach(dropdown => {
+          dropdown.style.display = "none";
+        });
+      }
+    });
+  
+    // Close dropdowns when resizing to desktop view
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        const allDropdowns = document.querySelectorAll(".dropdown");
+        allDropdowns.forEach(dropdown => {
+          dropdown.style.display = "";
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Discover Malaysia</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="faq.css">   
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+      <a href="home.html" class="nav-branding"><i class="fas fa-home"></i> HOME</a>
+      <ul class="navbar-links">
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="faq_n_helps.html">FAQ</a></li>
+        <li>
+          <a href="#" class="pages-link">PAGES <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown">
+            <li><a href="Kedah.html">Kedah</a></li>
+            <li><a href="pahang.html">Pahang</a></li>
+            <li><a href="Penang.html">Penang</a></li>
+            <li><a href="Perak.html">Perak</a></li>
+            <li><a href="negeri.sembilan.html">Negeri Sembilan</a></li>
+            <li><a href="Kuala Lumpur.html">Kuala Lumpur</a></li>
+            <li><a href="Sabah.html">Sabah</a></li>
+            <li><a href="Sarawak.html">Sarawak</a></li>
+          </ul>
+        </li>
+        <li><a href="contact_us.html">CONTACT US</a></li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+  <br>
+  
+  <div id="container">
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+          <h3>What is Discover Malaysia?</h3>
+          <p>Discover Malaysia is your ultimate guide to exploring the beauty, culture, and attractions of Malaysia.</p>
+      </div>
+      <div class="faq-item">
+          <h3>What are the best times to visit Malaysia?</h3>
+          <p>The best time to visit Malaysia is during the dry season, from March to early October, when the weather is ideal for outdoor activities and sightseeing.</p>
+      </div>
+      <div class="faq-item">
+          <h3>What are some must-visit places in Malaysia?</h3>
+          <p>Some must-visit places in Malaysia include Kuala Lumpur, Penang, the Cameron Highlands, and the islands of Langkawi and Borneo.</p>
+      </div>
+  </section>
+  
+  <section id="help">
+      <h2>Help & Support</h2>
+      <div class="help-item">
+          <h3>How can I plan my trip to Malaysia?</h3>
+          <p>You can use our Trip Planner tool to customize your itinerary based on your interests, budget, and travel dates. Visit the Trip Planner section for more details.</p>
+      </div>
+      <div class="help-item">
+          <h3>How do I contact customer support?</h3>
+          <p>If you need any assistance, you can reach out to our customer support team via email at support@discovermalaysia.com or call us at +60-123-4567.</p>
+      </div>
+      <div class="help-item">
+          <h3>Where can I find more information?</h3>
+          <p>For more detailed information, check out our blog, resources section, or follow us on social media for the latest updates.</p>
+      </div>
+  </div>
+  
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h2>Company</h2>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact_us.html">Contact Us</a></li>
+            <li><a href="privacy policy.html">Privacy Policy</a></li>
+            <li><a href="tnc.html">Terms & Condition</a></li>
+            <li><a href="faq_n_helps.html">FAQs & Help</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h2>Contact</h2>
+          <div class="contact-info">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>23 Jalan Merdeka, Kuala Lumpur, Malaysia</p>
+          </div>
+          <div class="contact-info">
+            <i class="fas fa-phone"></i>
+            <p>+012 3456 7890</p>
+          </div>
+          <div class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <p>info@discovermalaysia.com</p>
+          </div>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/disc_overmalaysia/"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/AMOLEDArekkusu"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy;2024 Discover Malaysia. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".navbar-links");
+      const dropdowns = document.querySelectorAll(".navbar-links > li > a");
+      const pagesLink = document.querySelector(".pages-link");
+    
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+    
+      dropdowns.forEach(dropdown => {
+        dropdown.addEventListener("click", (e) => {
+          if (window.innerWidth <= 768) {
+            const submenu = dropdown.nextElementSibling;
+            if (submenu && submenu.classList.contains("dropdown")) {
+              e.preventDefault();
+              submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+            }
+          }
+        });
+      });
+    
+      pagesLink.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          const dropdownMenu = pagesLink.nextElementSibling;
+          dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+        }
+      });
+    
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+          navLinks.classList.remove("active");
+          hamburger.classList.remove("active");
+          
+          // Close all dropdowns when clicking outside
+          const allDropdowns = document.querySelectorAll(".dropdown");
+          allDropdowns.forEach(dropdown => {
+            dropdown.style.display = "none";
+          });
+        }
+      });
+    
+      // Close dropdowns when resizing to desktop view
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+          const allDropdowns = document.querySelectorAll(".dropdown");
+          allDropdowns.forEach(dropdown => {
+            dropdown.style.display = "";
+          });
+        }
+      });
+    </script>
+</body>
+</html>
